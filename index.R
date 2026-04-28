@@ -131,7 +131,7 @@ ui <- fluidPage(
 server <- function(input, output) {
   
   rv <- reactiveValues()
-  rv$utilities2 <- utilities2
+  rv$utilities <- utilities
   
   observe({
     if(! is.null(input$building)){
@@ -207,7 +207,7 @@ server <- function(input, output) {
   })
   
   #Logic for data table
-  output$dt1 <- renderDT({ rv$utilities2 })
+  output$dt1 <- renderDT({ rv$utilities })
   
   
   
